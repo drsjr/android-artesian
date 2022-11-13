@@ -1,11 +1,14 @@
 import tour.donnees.artisan.dependencies.AndroidX
 import tour.donnees.artisan.dependencies.Debugs
-import tour.donnees.artisan.dependencies.Plugins
 import tour.donnees.artisan.dependencies.Tests
+import tour.donnees.artisan.dependencies.Hilt
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -75,6 +78,8 @@ dependencies {
     implementation (AndroidX.composeUI)
     implementation (AndroidX.composeUITooling)
     implementation (AndroidX.composeMaterial)
+    runtimeOnly("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
 
     testImplementation (Tests.junit)
 
@@ -84,4 +89,26 @@ dependencies {
 
     debugImplementation (Debugs.composeUITooling)
     debugImplementation (Debugs.composeUITest)
+
+    //Hilt
+    implementation (Hilt.androidHilt)
+    kapt (Hilt.androidHiltCompiler)
+
+    //Hilt for test https://developer.android.com/training/dependency-injection/hilt-testing?hl=pt-br
+
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
+
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    //Gson
+    implementation("com.google.code.gson:gson:2.10")
+
+}
+
+kapt {
+    correctErrorTypes = true
+
 }

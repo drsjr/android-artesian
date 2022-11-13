@@ -24,8 +24,11 @@ object Debugs {
 }
 
 object Plugins {
-
     const val application = "com.android.application"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
+}
 
+object Hilt {
+    const val androidHilt = "com.google.dagger:hilt-android:2.44"
+    const val androidHiltCompiler = "com.google.dagger:hilt-android-compiler:2.44"
 }
