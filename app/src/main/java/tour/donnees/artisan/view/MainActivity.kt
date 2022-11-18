@@ -1,17 +1,21 @@
 package tour.donnees.artisan.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,6 +23,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
@@ -28,7 +34,10 @@ import androidx.compose.ui.unit.sp
 import tour.donnees.artisan.view.ui.theme.AndroidArtisanTheme
 import tour.donnees.artisan.view.ui.theme.Typography
 import tour.donnees.artisan.R
-import tour.donnees.artisan.view.ui.ExpandableCard
+import tour.donnees.artisan.view.ui.CoilImage
+import tour.donnees.artisan.view.ui.ExampleLazyColum
+import tour.donnees.artisan.view.ui.GoogleButton
+import tour.donnees.artisan.view.ui.SignIn
 import tour.donnees.artisan.view.ui.theme.Purple700
 
 class MainActivity : ComponentActivity() {
@@ -38,13 +47,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AndroidArtisanTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize()
-                        .padding(16.dp),
-                    color = MaterialTheme.colors.background
-                ) {
-                    ExpandableCard()
-                }
+               ExampleLazyColum()
             }
         }
     }
@@ -106,11 +109,18 @@ fun DefaultPreview() {
         TheBox()
         CustomText()
         CustomTextWithAnnotatedString()*/
-        Column(modifier = Modifier.fillMaxSize()
-            .padding(16.dp)) {
+        ExampleLazyColum()
+
+        //Column(modifier = Modifier
+          ///  .fillMaxSize()
+           // .padding(16.dp)) {
             //SuperScriptText(normalText = "Hello World", superText = "Olá Mundo")
-            ExpandableCard()
-        }
+            //ExpandableCard()
+            //CustomTextField()
+            //GoogleButton()
+            //CoilImage()
+         //   SignIn()
+       // }
 
     }
 }
@@ -200,6 +210,60 @@ fun SuperScriptText(
             append(text = superText)
         }
     })
+}
+
+@Composable
+fun CustomTextField() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        var text by remember { mutableStateOf("Type here...") }
+        BasicTextField(
+            value = text,
+            onValueChange = { newText ->
+                text = newText
+            },
+            //enabled = false,
+            //readOnly = true,
+           // label = {
+           //     Text(text = "Text")
+           // },
+            //singleLine = true,
+            maxLines = 5,
+            /*leadingIcon = {
+                IconButton(
+                    onClick = {
+
+                    }) {
+                    Icon(
+                        imageVector = Icons.Filled.Email,
+                        contentDescription = "Email Icon")
+                }
+            },
+            trailingIcon = {
+                IconButton(
+                    onClick = {
+                        Log.d("", " ")
+                    }) {
+                    Icon(
+                        imageVector = Icons.Filled.Check,
+                        contentDescription = "Email Icon")
+                }
+            },*/
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Email,
+                imeAction = ImeAction.Search
+            ),
+            keyboardActions = KeyboardActions(
+                onSearch = {
+                    Log.d("Trailing", "CLicked")
+                }
+            )
+        )
+    }
+
 }
 
 

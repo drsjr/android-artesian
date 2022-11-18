@@ -90,6 +90,9 @@ dependencies {
     debugImplementation (Debugs.composeUITooling)
     debugImplementation (Debugs.composeUITest)
 
+    // Load Image
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
     //Hilt
     implementation (Hilt.androidHilt)
     kapt (Hilt.androidHiltCompiler)
