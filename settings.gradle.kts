@@ -13,4 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "android-artisan"
-include ':app'
+include(":app")
+include (":arch:core")
+include (":data")
+include (":data:base")
