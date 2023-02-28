@@ -6,8 +6,8 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.core.module.Module
-import tour.donnees.arch.core.coroutine.di.coroutineModule
 import tour.donnees.artisan.di.appModule
+import tour.donnees.data.cards.di.CardDataModule
 
 class ArtisanApplication: Application() {
 
@@ -22,8 +22,8 @@ class ArtisanApplication: Application() {
 
     }
 
-    internal fun getAllModules(): List<Module> = listOf(
-        appModule,
-        coroutineModule
+    private fun getAllModules(): List<Module> = listOf(
+        CardDataModule,
+        appModule
     )
 }

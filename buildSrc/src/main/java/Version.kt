@@ -1,5 +1,8 @@
 object Version {
 
+    const val Gson = "2.9.0"
+    const val Retrofit = "2.9.0"
+    const val Moshi = "1.14.0"
     const val Koin = "3.3.3"
 
     const val AndroidXCore = "1.9.0"

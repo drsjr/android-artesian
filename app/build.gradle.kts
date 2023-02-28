@@ -14,6 +14,7 @@ android {
         versionCode = AndroidConfig.versionCode
         versionName = AndroidConfig.versionName
         testInstrumentationRunner = AndroidConfig.testInstrumentationRunner
+
     }
 
     buildTypes {
@@ -67,6 +68,7 @@ android {
 
 dependencies {
 
+    implementation(project(":data:cards"))
     implementation(project(":arch:core"))
 
     implementation(Dependencies.Koin)

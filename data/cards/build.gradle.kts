@@ -5,14 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "tour.donnees.data.base"
-    compileSdk = AndroidConfig.compileSdk
+    namespace = "tour.donnees.data.cards"
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = AndroidConfig.minSdk
-        targetSdk = AndroidConfig.targetSdk
-
-        testInstrumentationRunner = AndroidConfig.testInstrumentationRunner
+        minSdk = 24
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation(project(":data:base"))
+
     implementation(Dependencies.AndroidXCore)
     implementation(Dependencies.CoroutinesCore)
     implementation(Dependencies.Koin)
@@ -56,11 +56,7 @@ dependencies {
     //Retrofit
     implementation(Dependencies.Retrofit)
     implementation(Dependencies.RetrofitConversteMoshi)
-    implementation(Dependencies.RetrofitConversteGson)
 
     //Moshi
     implementation(Dependencies.MoshiKotlin)
-
-    //Gson
-    implementation(Dependencies.Gson)
 }

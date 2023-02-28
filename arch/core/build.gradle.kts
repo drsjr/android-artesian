@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = AndroidConfig.namespace
+    namespace = "tour.donnees.arch.core"
     compileSdk = AndroidConfig.compileSdk
 
     defaultConfig {

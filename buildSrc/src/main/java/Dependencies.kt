@@ -22,5 +22,16 @@ object Dependencies {
     const val OkHttp = "com.squareup.okhttp3:okhttp"
     const val OkHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
 
+    const val Retrofit = "com.squareup.retrofit2:retrofit:${Version.Retrofit}"
+    const val RetrofitConversteMoshi = "com.squareup.retrofit2:converter-moshi:${Version.Retrofit}"
+    const val RetrofitConversteGson = "com.squareup.retrofit2:converter-gson:${Version.Retrofit}"
+
+    const val Moshi = "com.squareup.moshi:moshi:${Version.Moshi}"
+    const val MoshiKotlin = "com.squareup.moshi:moshi-kotlin:${Version.Moshi}"
+    const val MoshiCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Version.Moshi}"
+
+    const val Gson = "com.google.code.gson:gson:${Version.Gson}"
+
+
 }
 
