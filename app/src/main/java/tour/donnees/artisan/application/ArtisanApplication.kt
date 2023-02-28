@@ -7,7 +7,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.core.module.Module
 import tour.donnees.artisan.di.appModule
-import tour.donnees.data.cards.di.CardDataModule
+import tour.donnees.domain.cards.di.CardsUseCaseModule
 
 class ArtisanApplication: Application() {
 
@@ -23,7 +23,7 @@ class ArtisanApplication: Application() {
     }
 
     private fun getAllModules(): List<Module> = listOf(
-        CardDataModule,
+        CardsUseCaseModule,
         appModule
     )
 }

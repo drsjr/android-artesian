@@ -68,7 +68,8 @@ android {
 
 dependencies {
 
-    implementation(project(":data:cards"))
+    implementation(project(":domain:base"))
+    implementation(project(":domain:cards"))
     implementation(project(":arch:core"))
 
     implementation(Dependencies.Koin)

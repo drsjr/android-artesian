@@ -1,6 +1,6 @@
 package tour.donnees.data.cards.repository
 
-import tour.donnees.data.base.api.API
+import tour.donnees.data.cards.remote.API
 import tour.donnees.data.cards.remote.CardDTO
 
 class CardRepositoryImpl constructor(

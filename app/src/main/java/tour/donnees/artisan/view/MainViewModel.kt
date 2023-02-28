@@ -1,20 +1,19 @@
 package tour.donnees.artisan.view
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import tour.donnees.data.cards.repository.CardRepository
+import tour.donnees.domain.cards.usecase.GetAllCardsUseCase
 
 class MainViewModel constructor(
-    private val cardRepository: CardRepository
+    private val getAllCardsUseCase: GetAllCardsUseCase
 ): ViewModel() {
 
-    fun test() {
-
+    fun getAllCards() {
         viewModelScope.launch {
-            val test = cardRepository.getAllCards()
-            test.toList()
+           getAllCardsUseCase.execute(Unit).map {
+               println("Card: name (${it.name}, url (${it.url}))")
+           }
         }
     }
 

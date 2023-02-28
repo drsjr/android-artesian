@@ -1,7 +1,6 @@
-package tour.donnees.data.base.api
+package tour.donnees.data.cards.remote
 
 import retrofit2.http.GET
-import tour.donnees.data.cards.remote.AllCards
 
 interface API {
 

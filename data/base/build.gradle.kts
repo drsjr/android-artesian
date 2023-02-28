@@ -42,6 +42,9 @@ dependencies {
     implementation(Dependencies.CoroutinesCore)
     implementation(Dependencies.Koin)
 
+    testImplementation(Dependencies.Junit)
+    testImplementation(Dependencies.AndroidXJunit)
+
     // define a BOM and its version
     implementation(platform(Dependencies.OkHttpPlatform))
 
@@ -49,17 +52,9 @@ dependencies {
     implementation(Dependencies.OkHttp)
     implementation(Dependencies.OkHttpLoggingInterceptor)
 
-    testImplementation(Dependencies.Junit)
-    testImplementation(Dependencies.AndroidXJunit)
-
-
     //Retrofit
     implementation(Dependencies.Retrofit)
-    implementation(Dependencies.RetrofitConversteMoshi)
     implementation(Dependencies.RetrofitConversteGson)
-
-    //Moshi
-    implementation(Dependencies.MoshiKotlin)
 
     //Gson
     implementation(Dependencies.Gson)

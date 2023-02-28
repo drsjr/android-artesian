@@ -7,14 +7,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import tour.donnees.data.base.api.API
 
 val NetworkModule = module {
     single { getOkHttpClient() }
-
     single { getRetrofit(get()) }
-
-    single { get<Retrofit>().create(API::class.java) }
 }
 
 private fun getOkHttpClient(): OkHttpClient {

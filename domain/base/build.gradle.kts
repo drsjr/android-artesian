@@ -1,11 +1,10 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-
 }
 
 android {
-    namespace = "tour.donnees.data.cards"
+    namespace = "tour.donnees.domain.base"
     compileSdk = 33
 
     defaultConfig {
@@ -35,24 +34,7 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":data:base"))
-
     implementation(Dependencies.AndroidXCore)
     implementation(Dependencies.CoroutinesCore)
-    implementation(Dependencies.Koin)
-
-    // define a BOM and its version
-    implementation(platform(Dependencies.OkHttpPlatform))
-
-    // define any required OkHttp artifacts without version
-    implementation(Dependencies.OkHttp)
-    implementation(Dependencies.OkHttpLoggingInterceptor)
-
-    //Retrofit
-    implementation(Dependencies.Retrofit)
-    implementation(Dependencies.RetrofitConversteGson)
-
-    //Gson
-    implementation(Dependencies.Gson)
+    testImplementation(Dependencies.Junit)
 }
