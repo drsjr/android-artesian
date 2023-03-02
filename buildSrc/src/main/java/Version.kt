@@ -19,4 +19,8 @@ object Version {
     const val CoroutinesCore = "1.6.4"
 
     const val OkHttp = "4.10.0"
+
+    const val Coil = "2.2.2"
+
+    const val LiveDataCompose = "1"
 }

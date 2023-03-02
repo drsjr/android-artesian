@@ -71,6 +71,12 @@ dependencies {
     implementation(project(":domain:base"))
     implementation(project(":domain:cards"))
     implementation(project(":arch:core"))
+    implementation(project(":arch:designsystem"))
+
+    implementation(Dependencies.Coil)
+    implementation(Dependencies.CoilCompose)
+
+    implementation(Dependencies.LiveDataCompose)
 
     implementation(Dependencies.Koin)
 

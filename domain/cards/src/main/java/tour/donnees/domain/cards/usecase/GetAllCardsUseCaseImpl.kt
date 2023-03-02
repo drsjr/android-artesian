@@ -7,8 +7,10 @@ class GetAllCardsUseCaseImpl(
     private val cardRepository: CardRepository
 ): GetAllCardsUseCase() {
     override suspend fun execute(param: Unit): Collection<Card> {
-        return cardRepository.getAllCards().map {
-            Card(it.name.orEmpty(), it.imageUrl.orEmpty())
-        }
+        return cardRepository.getAllCards()
+            .filter { it.imageUrl != null }
+            .map {
+                Card(it.name.orEmpty(), it.imageUrl.orEmpty())
+            }
     }
 }

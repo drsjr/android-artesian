@@ -1,4 +1,4 @@
-package tour.donnees.artisan.view.ui.theme
+package tour.donnees.arch.designsystem
 
 import androidx.compose.ui.graphics.Color
 

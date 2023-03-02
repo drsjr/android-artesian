@@ -1,11 +1,10 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-
 }
 
 android {
-    namespace = "tour.donnees.data.cards"
+    namespace = "tour.donnees.arch.designsystem"
     compileSdk = 33
 
     defaultConfig {
@@ -32,30 +31,31 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.1.1"
+    }
 }
 
 dependencies {
 
-    implementation(project(":data:base"))
-
-    implementation(Dependencies.AndroidXCore)
-    implementation(Dependencies.CoroutinesCore)
     implementation(Dependencies.Koin)
 
+    implementation(Dependencies.AndroidXCore)
+    implementation(Dependencies.AndroidXLifecycleRuntime)
+    implementation(Dependencies.ActiviryCompose)
+    implementation(Dependencies.ComposeUI)
+    implementation(Dependencies.ComposeUIToolsPreview)
+    implementation(Dependencies.ComposeMaterial)
+
     testImplementation(Dependencies.Junit)
-    testImplementation(Dependencies.AndroidXJunit)
-
-    // define a BOM and its version
-    implementation(platform(Dependencies.OkHttpPlatform))
-
-    // define any required OkHttp artifacts without version
-    implementation(Dependencies.OkHttp)
-    implementation(Dependencies.OkHttpLoggingInterceptor)
-
-    //Retrofit
-    implementation(Dependencies.Retrofit)
-    implementation(Dependencies.RetrofitConversteGson)
-
-    //Gson
-    implementation(Dependencies.Gson)
+    androidTestImplementation(Dependencies.AndroidXJunit)
+    androidTestImplementation(Dependencies.Espresso)
+    androidTestImplementation(Dependencies.ComposeUITest)
+    debugImplementation(Dependencies.ComposeUITooling)
+    debugImplementation(Dependencies.ComposeUITestManifest)
 }

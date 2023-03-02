@@ -1,6 +1,9 @@
 package tour.donnees.artisan.application
 
 import android.app.Application
+import coil.ImageLoader
+import coil.ImageLoaderFactory
+import coil.util.DebugLogger
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -9,7 +12,7 @@ import org.koin.core.module.Module
 import tour.donnees.artisan.di.appModule
 import tour.donnees.domain.cards.di.CardsUseCaseModule
 
-class ArtisanApplication: Application() {
+class ArtisanApplication: Application(), ImageLoaderFactory {
 
     override fun onCreate() {
         super.onCreate()
@@ -26,4 +29,12 @@ class ArtisanApplication: Application() {
         CardsUseCaseModule,
         appModule
     )
+
+    override fun newImageLoader(): ImageLoader {
+        return ImageLoader.Builder(this)
+            .crossfade(true)
+            .logger(DebugLogger())
+            .build()
+    }
+
 }

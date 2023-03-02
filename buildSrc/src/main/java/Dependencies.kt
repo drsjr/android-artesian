@@ -32,6 +32,10 @@ object Dependencies {
 
     const val Gson = "com.google.code.gson:gson:${Version.Gson}"
 
+    const val Coil = "io.coil-kt:coil:${Version.Coil}"
+    const val CoilCompose = "io.coil-kt:coil-compose:${Version.Coil}"
+
+    const val LiveDataCompose = "androidx.compose.runtime:runtime-livedata:${Version.ComposeUiVersion}"
 
 }
 
