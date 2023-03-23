@@ -10,6 +10,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.core.module.Module
 import tour.donnees.artisan.di.appModule
+import tour.donnees.artisan.home.di.HomeModule
 import tour.donnees.domain.cards.di.CardsUseCaseModule
 
 class ArtisanApplication: Application(), ImageLoaderFactory {
@@ -27,6 +28,7 @@ class ArtisanApplication: Application(), ImageLoaderFactory {
 
     private fun getAllModules(): List<Module> = listOf(
         CardsUseCaseModule,
+        HomeModule,
         appModule
     )
 

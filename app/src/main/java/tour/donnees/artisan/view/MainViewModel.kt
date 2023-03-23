@@ -16,7 +16,7 @@ class MainViewModel constructor(
     fun getAllCards() {
         viewModelScope.launch {
             val test = getAllCardsUseCase.execute(Unit)
-            list.value = listOf(test.first())
+            list.value = test.toList()
         }
     }
 

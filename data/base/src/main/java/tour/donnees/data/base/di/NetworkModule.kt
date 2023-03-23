@@ -29,7 +29,7 @@ private fun getRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
         .client(okHttpClient)
         .baseUrl(
-            "https://api.magicthegathering.io/"
+            "http://10.0.2.2:8000/"
         )
         //.addConverterFactory(MoshiConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
