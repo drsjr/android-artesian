@@ -9,7 +9,7 @@ import tour.donnees.data.pokedex.datasource.remote.RemoteDataSourceImpl
 import tour.donnees.data.pokedex.repository.PokeDexRepository
 import tour.donnees.data.pokedex.repository.PokeDexRepositoryImpl
 
-val DataPokeDexModule = module {
+val PokeDexDataModule = module {
     includes(NetworkModule)
 
     single { get<Retrofit>().create(PokeDexAPI::class.java) }

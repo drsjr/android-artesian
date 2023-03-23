@@ -2,33 +2,26 @@ package tour.donnees.arch.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Card
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import tour.donnees.arch.designsystem.*
+import tour.donnees.domain.pokedex.model.Pokemon
 
 
 @Composable
-fun BaseItemCard(
-    itemName: String, 
-    itemValue: Int, 
-    image: Painter
-) {
+fun PokemonItemCard(pokemon: Pokemon) {
     Surface(
         modifier = Modifier.sizeIn(110.dp),
         shape = Shapes.large,
@@ -43,29 +36,43 @@ fun BaseItemCard(
                 )
                 .padding(8.dp)
             ) {
-                Image(
+                AsyncImage(
                     modifier = Modifier
                         .size(100.dp)
                         .align(Alignment.Center),
-                    painter = image, contentDescription = "Teste")
+                    model = pokemon.urlImage, contentDescription = pokemon.name)
             }
             Column(
                 modifier = Modifier.padding(8.dp),
             ) {
-                Text( text = itemName, maxLines = 1, fontSize = 14.sp)
-                Text( text = "\$$itemValue", fontSize = 12.sp, fontStyle = FontStyle.Italic, fontWeight = FontWeight(100))
+                Text( text = "#${pokemon.nameId}", fontSize = 12.sp, fontStyle = FontStyle.Italic, fontWeight = FontWeight(100))
+                Text( text = pokemon.name, maxLines = 1, fontSize = 14.sp)
             }
         }
     }
 }
 
-
+/**
+ * {
+    "id": "1",
+    "nameId": "001",
+    "name": "Bulbasaur",
+    "type": [
+    "Grass",
+    "Poison"
+    ],
+    "url": "http://10.0.2.2:8000/images/001.png"
+    }
+ */
 @Preview(showBackground = true)
 @Composable
 fun BaseItemCardPreview() {
     AndroidArtisanTheme {
         Surface(modifier = Modifier.padding(16.dp)) {
-            BaseItemCard("Item Name", 79, painterResource(id = android.R.drawable.ic_dialog_email))
+            PokemonItemCard(Pokemon(
+                "1", "Bulbasaur", "001", listOf("Grass", "Poison"),
+                "http://10.0.2.2:8000/images/001.png"
+            ))
         }
     }
 }

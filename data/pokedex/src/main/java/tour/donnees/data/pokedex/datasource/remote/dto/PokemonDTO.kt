@@ -6,5 +6,6 @@ data class PokemonDTO(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
     @SerializedName("nameId") val nameId: String,
-    @SerializedName("type") val type: List<String>
+    @SerializedName("type") val type: List<String>,
+    @SerializedName("url") val urlImage: String
 )

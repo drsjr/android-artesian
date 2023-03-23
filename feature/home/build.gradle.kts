@@ -46,6 +46,7 @@ dependencies {
 
     implementation(project(":domain:base"))
     implementation(project(":domain:cards"))
+    implementation(project(":domain:pokedex"))
     implementation(project(":arch:core"))
     implementation(project(":arch:designsystem"))
 
