@@ -32,20 +32,20 @@ class HomeActivity : ComponentActivity() {
                 "http://10.0.2.2:8000/images/001.png"
             ),
             Pokemon(
-                "1", "Bulbasaur", "002", listOf("Grass", "Poison"),
-                "http://10.0.2.2:8000/images/002.png"
+                "1", "Venossaur", "003", listOf("Grass", "Poison"),
+                "http://10.0.2.2:8000/images/003.png"
             ),
             Pokemon(
-                "1", "Bulbasaur", "101", listOf("Grass", "Poison"),
-                "http://10.0.2.2:8000/images/101.png"
+                "1", "Charmander", "004", listOf("Grass", "Poison"),
+                "http://10.0.2.2:8000/images/004.png"
             ),
             Pokemon(
-                "1", "Bulbasaur", "201", listOf("Grass", "Poison"),
-                "http://10.0.2.2:8000/images/201.png"
+                "1", "Raychu", "026", listOf("Grass", "Poison"),
+                "http://10.0.2.2:8000/images/026.png"
             ),
             Pokemon(
-                "1", "Bulbasaur", "301", listOf("Grass", "Poison"),
-                "http://10.0.2.2:8000/images/301.png"
+                "1", "Pikachu", "025", listOf("Grass", "Poison"),
+                "http://10.0.2.2:8000/images/025.png"
             )
         )
     }
@@ -55,7 +55,7 @@ class HomeActivity : ComponentActivity() {
 fun Home(pokemonList: List<Pokemon>) {
     AndroidArtisanTheme {
         Surface {
-            HomeScreen(pokemonList)
+            HomeScreen(pokemonList, "a")
         }
     }
 }
@@ -69,19 +69,19 @@ fun HomePreview() {
            "http://10.0.2.2:8000/images/001.png"
        ),
        Pokemon(
-           "1", "Bulbasaur", "002", listOf("Grass", "Poison"),
+           "1", "Venossaur", "003", listOf("Grass", "Poison"),
            "http://10.0.2.2:8000/images/002.png"
        ),
        Pokemon(
-           "1", "Bulbasaur", "101", listOf("Grass", "Poison"),
+           "1", "Charmander", "004", listOf("Grass", "Poison"),
            "http://10.0.2.2:8000/images/101.png"
        ),
        Pokemon(
-           "1", "Bulbasaur", "201", listOf("Grass", "Poison"),
+           "1", "Raychu", "026", listOf("Grass", "Poison"),
            "http://10.0.2.2:8000/images/201.png"
        ),
        Pokemon(
-           "1", "Bulbasaur", "301", listOf("Grass", "Poison"),
+           "1", "Pikachu", "025", listOf("Grass", "Poison"),
            "http://10.0.2.2:8000/images/301.png"
        )
    ))

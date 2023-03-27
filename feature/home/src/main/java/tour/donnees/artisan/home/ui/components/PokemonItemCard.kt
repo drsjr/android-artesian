@@ -23,12 +23,12 @@ import tour.donnees.domain.pokedex.model.Pokemon
 @Composable
 fun PokemonItemCard(pokemon: Pokemon) {
     Surface(
-        modifier = Modifier.sizeIn(110.dp),
+        modifier = Modifier.sizeIn(220.dp),
         shape = Shapes.large,
         elevation = 6.dp) {
         Column {
             Box(modifier = Modifier
-                .sizeIn(110.dp)
+                .sizeIn(220.dp)
                 .background(
                     brush = Brush.verticalGradient(
                         listOf(Purple700, Purple500, Purple200, White)
@@ -38,7 +38,7 @@ fun PokemonItemCard(pokemon: Pokemon) {
             ) {
                 AsyncImage(
                     modifier = Modifier
-                        .size(100.dp)
+                        .size(150.dp)
                         .align(Alignment.Center),
                     model = pokemon.urlImage, contentDescription = pokemon.name)
             }
